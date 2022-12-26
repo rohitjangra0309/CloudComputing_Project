@@ -1,0 +1,93 @@
+<%- include('mainTemplate.ejs') %>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<style>
+#loadingGIF {
+  background:url("/images/loading.gif") center center no-repeat;
+  max-width: 100%;
+  width:1024;
+  height:576; 
+}
+ 
+    
+</style>
+
+  <main>
+    <article>
+  
+        <section class="watch movie-detail">
+          <div class="container">
+            <div class="movie-detail-content">
+
+            <% let me = episodes[0].replace("-", " "); 
+            me = me.toUpperCase()  
+            %>
+
+            <a href="../../details/<%- episodes[0] %>" class="h1 detail-title">
+              <strong class="text-white"><%- me %> </strong>
+              
+            </a>
+    </div>
+          </div>
+            <div class="chamoy">
+              <div id="loadingGIF"> 
+              <center>
+               <iframe id="ifr" onload="resize(this)" allow="fullscreen" scrolling="no" src="<%- API_URL %>watch/<%- episodes[0]%>/<%- episodes[1] %>" width="1024" style="max-width: 100%; max-height: 100%; border:none;" height="650" ></iframe>
+                </center>
+                
+                <center>
+                 <div class="details-actions" style=" position: relative;">
+
+
+            </div>
+              </center>
+
+
+  </div>
+            </div>
+          </div>
+             
+               
+           
+           
+          </section>
+      
+  </article>
+  </main>
+  <script>
+
+    
+    function resize(iFrame) {
+
+       x.style.backgroundImage = "url()"
+}
+
+ 
+
+let ifr = document.getElementById("ifr");
+let x = document.getElementById("loadingGIF");
+
+  </script>
+ 
+<section class="tv-series" id="episodes">
+  <div class="container">
+    <h2 class="h2 section-title">Episodes Available</h2>
+    <ul class="episode slider">
+      <% data.epList.forEach((ep) => { %>
+
+      <li class="episode_count">
+        <a href="/watch/<%- ep.id %>">
+          <div title="EP <%- ep.number %>" class="name">
+            <span id="titleep"><%- ep.number %></span>
+          </div>
+        </a>
+      </li>
+
+      <% }) %>
+    </ul>
+  </div>
+</section>
+         
+
+
+<%- include('lowermainTemplate.ejs') %>

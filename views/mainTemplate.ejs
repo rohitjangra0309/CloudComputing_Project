@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <title>Anime+ - Watch anime !!!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-2.1.0.js"
+    ></script>
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body id="top">
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+      <div class="container">
+        <div class="overlay" data-overlay></div>
+
+        <a href="/" class="logo">
+          <img src="/images/logo.svg" alt="None" width="320" height="100" />
+        </a>
+
+        <div class="header-actions">
+          <li class="search-bar">
+            <form action="/search" style="display: flex">
+              <div
+                id="searchx"
+                class="searchx auto-complete form-inline animate-me"
+              >
+                <input
+                  placeholder="Search.."
+                  name="keyword"
+                  type="text"
+                  required
+                />
+                <button type="submit" class="search-btn">
+                  <ion-icon name="search-outline"></ion-icon>
+                </button>
+              </div>
+            </form>
+          </li>
+          <a class="searcho" id="searcho" onclick="mobile()">
+            <button type="submit" class="search-btn">
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+          </a>
+        </div>
+
+        <button class="menu-open-btn" data-menu-open-btn>
+          <ion-icon name="reorder-two"></ion-icon>
+        </button>
+
+        <nav class="navbar" data-navbar>
+          <div class="navbar-top">
+            <a href="/" class="logo">
+              <img src="/images/logo.svg" alt="AnimeEZ logo" />
+            </a>
+
+            <button class="menu-close-btn" data-menu-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+          </div>
+
+          <ul class="navbar-list">
+            <li id="search-bar-mob">
+              <form action="/search">
+                <div
+                  id="searchxx"
+                  class="searchxx auto-complete form-inline animate-me"
+                  style="display: flex"
+                >
+                  <input
+                    placeholder="Search.."
+                    name="keyword"
+                    type="text"
+                    required
+                  />
+                  <button type="submit" class="search-btn">
+                    <ion-icon name="search-outline"></ion-icon>
+                  </button>
+                </div>
+              </form>
+            </li>
+            <li>
+              <a href="/" class="pages_navbar"><b>HOME</b></a>
+            </li>
+            <li>
+              <a href="/tv-shows" class="pages_navbar"><b>TV SERIES</b></a>
+            </li>
+            <li>
+              <a href="/movies" class="pages_navbar"><b>MOVIES</b></a>
+            </li>
+
+            
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>

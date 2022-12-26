@@ -1,0 +1,86 @@
+<%- include('mainTemplate.ejs') %>
+
+<main>
+  <article>
+    <section class="show_data">
+      <div class="container">
+        <figure class="show_data-banner">
+          <img src="<%- finalData.image %>" />
+        </figure>
+
+        <div class="show_data-content">
+          <h1 class="h1 detail-title">
+            <strong class="text-white"><%- finalData.title %></strong>
+          </h1>
+
+          <div class="meta-wrapper">
+            <div class="badge-wrapper">
+              <div class="badge badge-fill">
+                EP Count - <%- finalData.totalepisode %>
+              </div>
+            </div>
+
+            
+
+            <div class="date-time">
+              <div>
+                <i class="bi bi-calendar"></i>
+
+                <time datetime="<%- finalData.relased %>"
+                  ><%- finalData.relased %></time
+                >
+              </div>
+
+              <div>
+                <i class="bi bi-clock"></i>
+
+                <time datetime="Type"><%- finalData.status %></time>
+              </div>
+            </div>
+            <div class="ganre-wrapper">
+              <a><%- finalData.genres %></a>
+            </div>
+          </div>
+
+          <p class="storyline"><%- finalData.summary %></p>
+
+          <div class="browse_button">
+            <a href="#episodes" class="btn btn-info">
+              <i class="bi bi-play-btn"></i>
+
+              <span>Browse</span>
+            </a>
+          </div>
+        </div>
+        <figure class="show_data-banner">
+          <img src="<%- finalData.image %>" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- 
+        - #TV SERIES
+      -->
+  </article>
+</main>
+<section class="tv-series" id="episodes">
+  <div class="container">
+    <h2 class="h2 section-title">Episodes Available</h2>
+    <ul class="episode slider">
+      <% finalData.epList.forEach((ep) => { %>
+
+      <li class="episode_count">
+        <a href="/watch/<%- ep.id %>">
+          <div title="EP <%- ep.number %>" class="name">
+            <span id="titleep"><%- ep.number %></span>
+          </div>
+        </a>
+      </li>
+
+      <% }) %>
+    </ul>
+  </div>
+</section>
+
+
+<%- include('lowermainTemplate.ejs') %>

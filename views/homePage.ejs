@@ -1,0 +1,62 @@
+<%- include('mainTemplate.ejs') %>
+
+<main>
+  <article>
+    <section class="home">
+      <div class="container">
+        <div class="home_content">
+          <p class="home_nameLine">Anime+</p>
+
+          <h1 class="h1 home_title">
+            Stream anime series and movies<strong> for free! </strong>
+          </h1>
+
+          <button onclick="location.href = '/tv-shows'" class="btn btn-info">
+            <i class="bi bi-play-btn"></i>
+
+            <span>Click Me</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="popular_anime">
+      <div class="container">
+        <div class="flex-wrapper">
+          <div class="title-wrapper">
+            <h2 class="h2 sub_line">Popular Anime</h2>
+          </div>
+        </div>
+        <% let j = 0 %>
+        <ul class="moviesList slider">
+          <% popular.forEach((info) => { %>
+          <li>
+            <div class="moviesCard">
+              <a href="/details/<%- info.id%>">
+                <figure class="card-banner">
+                  <img src="<%- info.image%>" alt="<%- info.title %>" />
+                </figure>
+              </a>
+
+              <div class="title-wrapper">
+                <span style="color:rgb(40, 184, 228)">TV Series</span>
+                <a href="/details/<%- info.id %>">
+                  <h3 class="card-title"><%- info.title %></h3>
+                </a>
+                
+              </div>
+
+              <div class="card-meta">
+                <div class="badge badge-outline">Rated - <%- j+1 %></div>
+              </div>
+            </div>
+          </li>
+          <% j = j + 1 %> <% }) %>
+        </ul>
+      </div>
+    </section>
+  </article>
+</main>
+
+<%- include('lowermainTemplate.ejs') %>
+

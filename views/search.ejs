@@ -1,0 +1,42 @@
+<%- include('mainTemplate.ejs') %>
+
+<main>
+  <article>
+    <section class="top-rated">
+      <div class="container">
+        <h2 class="h2 section-title">Search Results</h2>
+
+        <ul class="moviesList">
+          <% popular.forEach((info) => { %>
+          <li>
+            <div class="moviesCard">
+              <a href="/details/<%- info.id%>">
+                <figure class="card-banner">
+                  <img src="<%- info.image %>" alt="<%- info.title %>" />
+                </figure>
+              </a>
+
+              <div class="title-wrapper">
+                <a href="/details/<%- info.id%>">
+                  <h3 class="card-title"><%- info.title %></h3>
+                </a>
+
+                <time>Anime</time>
+              </div>
+
+              <div class="card-meta">
+                <% let rel = info.released.replace(":", "-") %>
+                <div class="badge badge-outline"><%- rel %></div>
+              </div>
+            </div>
+          </li>
+
+          <% }) %>
+        </ul>
+      </div>
+    </section>
+  </article>
+</main>
+
+
+<%- include('lowermainTemplate.ejs') %>
